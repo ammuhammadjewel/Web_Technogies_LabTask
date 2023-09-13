@@ -1,0 +1,24 @@
+*{
+    padding : 0px;
+    margin: 0px;
+}
+.header-control{
+    background-color: #3F3C9A;
+    width: 100%;
+    height: 80px;
+}
+
+.control-align{
+    width: 980px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.img-control{
+    float: left;
+}
+.img-control img{
+    width: 200px;
+    height: 50px;
+    margin-top: 25px;
+}

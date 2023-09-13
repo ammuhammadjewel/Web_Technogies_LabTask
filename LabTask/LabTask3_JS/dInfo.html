@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor Information</title>
+</head>
+<body>
+    <center>
+        <fieldset>
+            <legend>Donor Information</legend>
+            <div id="donorInfoDisplay">
+                <!-- Display donor information here -->
+            </div>
+            <a href="login.html">Okay</a>
+        </fieldset>
+    </center>
+    <script>
+        window.onload = function () {
+            const donorInfoDisplay = document.getElementById("donorInfoDisplay");
+
+            // Retrieve and display form data from session storage
+            const keys = [
+                'fname', 'lname', 'comp', 'addr1', 'addr2', 'city',
+                'gender', 'state', 'zcode', 'country', 'phone', 'fax', 'email',
+                'name', 'adona', 'addr', 'city2', 'zip', 'comm'
+            ];
+
+            let donorInfoHTML = '';
+            keys.forEach(key => {
+                const value = sessionStorage.getItem(key);
+                donorInfoHTML += `<p>${key}: ${value}</p>`;
+            });
+
+            donorInfoDisplay.innerHTML = donorInfoHTML;
+
+            // Log form data to console
+            console.log("Donor Information:");
+            keys.forEach(key => {
+                const value = sessionStorage.getItem(key);
+                console.log(`${key}: ${value}`);
+            });
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Registration Page</title>
+</head>
+<body>
+	<center>
+		<fieldset>
+			<form method="post" action="registration.html" id="registrationForm">
+				<table>
+					<tr>
+						<td>First Name:</td>
+						<td><input type="text" name="fname" placeholder="Enter your first name">
+					</tr>
+					<tr>
+						<td>Last Name:</td>
+						<td><input type="text" name="lname" placeholder="Enter your last name">
+					</tr>
+					<tr>
+						<td>User Name:</td>
+						<td><input type="text" name="uname" placeholder="Enter your user name">
+					</tr>
+					<tr>
+						<td>Gender:</td>
+						<td>
+							<input type="radio" name="gender" value="male" > Male
+							<input type="radio" name="gender" value="female" > Female 
+						</td>
+					</tr>
+					<tr>
+						<td>Email Address:</td>
+						<td><input type="email" name="email" placeholder="Enter your email" >
+					</tr>
+					<tr>
+						<td>Phone Number:</td>
+						<td><input type="tel" name="number" placeholder="Enter your phone number" >
+					</tr>
+					<tr>
+						<td>Address:</td>
+						<td><textarea name ="address" placeholder="Enter your address" ></textarea></td>
+					</tr>
+					<tr>
+						<td>Password:</td>
+						<td><input type="password" name="pass1" placeholder="Enter your password" >
+					</tr>
+					<tr>
+						<td>Confirm Password:</td>
+						<td><input type="password" name="pass2" placeholder="Enter your password again" >
+					</tr>
+				</table>
+				<input type="submit" name="signup" value="Signup">
+			</form>
+			<script>
+				const registrationForm = document.getElementById("registrationForm");
+				registrationForm.addEventListener("submit", function (event) {
+					event.preventDefault();
+
+					// Get form data
+					const formData = new FormData(registrationForm);
+
+					// Store form data in session storage
+					for (const [key, value] of formData.entries()) {
+						sessionStorage.setItem(key, value);
+					}
+
+					// Redirect to registration info page
+					window.location.href = "regInfo.html";
+				});
+			</script>
+			<br>
+			<form method="post" action="registration.html">
+				<input type="submit" name="back" value="Back">
+			</form>
+		</fieldset>
+	</center>
+</body>
+</html>

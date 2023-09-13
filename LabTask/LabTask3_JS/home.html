@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body>
+    <style>
+        h1 {
+            text-align: center;
+            color: green;
+        }
+    </style>
+    <fieldset>
+        <h1> <b>Welcome Home</b> </h1>
+        <h3 style="text-align: center; color: red;"> Final LabTask 2 </h3>
+    </fieldset>
+    <br>
+    <center>
+        <fieldset>
+            <script>
+                window.onload = function () {
+                    const sessionData = sessionStorage;
+
+                    const username = sessionData.getItem("username");
+                    if (username) {
+                        document.querySelector("fieldset").innerHTML += `<p>User Name: ${username} Miah</p>`;
+                    }
+                };
+            </script>
+        </fieldset>
+    </center>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login Page</title>
+</head>
+<body>
+<center>
+    <fieldset>
+        <legend><i>Login Page</i></legend>
+        <form method="post" action="login.html" id="loginForm">
+            <table>
+                <tr>
+                    <td>Username:</td>
+                    <td><input type="text" name="username"> </td>
+                </tr>
+                <tr>
+                    <td>Password:</td>
+                    <td><input type="password" name="password"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" name="login" value="Login"></td>
+                    <td><input type="submit" name="registration" value="New user?"></td>
+                </tr>
+                <tr>
+                    <td><td><input type="submit" name="donor" value="New Registration"></td></td>
+                </tr>
+            </table>
+        </form>
+        
+    </fieldset>
+</center>
+
+
+<script>
+    const loginForm = document.getElementById("loginForm");
+    loginForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        // Get form data
+        const formData = new FormData(loginForm);
+
+        // Store form data in session storage
+        for (const [key, value] of formData.entries()) {
+            sessionStorage.setItem(key, value);
+        }
+
+        // Redirect to home page
+        window.location.href = "home.html";
+    });
+</script>
+</body>
+</html>
